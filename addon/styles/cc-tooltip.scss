@@ -1,0 +1,10 @@
+@mixin cc-tooltip (
+  $font-family: $font-family
+) {
+  display: inline-block;
+  font-family: $font-family;
+}
+
+.cc-tooltip {
+  @include cc-tooltip;
+}

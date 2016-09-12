@@ -1,0 +1,20 @@
+<div class="cc-input">
+  <div class="wrapper">
+    {{input
+      id=ids.input
+      type=type
+      placeholder=placeholder
+      disabled=states.disabled
+      focusIn=onFocusIn
+      focusOut=onFocusOut
+      value=value
+      aria-labelledby=ids.label
+      class="cc-input--input"}}
+  </div>
+</div>
+
+{{#if states.error.message}}
+  {{#ui-message kind="input-error" size="small"}}
+    {{states.error.message}}
+  {{/ui-message}}
+{{/if}}

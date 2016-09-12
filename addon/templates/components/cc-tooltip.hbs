@@ -1,0 +1,12 @@
+<div class="cc-tooltip">
+  {{yield (hash
+    target=(component "cc-tooltip--target" tooltip=(hash targetId=targetId
+                                                         action=(hash show=(action "show")
+                                                                      hide=(action "hide")
+                                                                      toggle=(action "toggle"))
+                                                         showTooltip=showTooltip))
+    popup=(component "cc-popup" targetId=targetId
+                                showPopup=showTooltip
+                                show=(action "show")
+                                hide=(action "hide")))}}
+</div>

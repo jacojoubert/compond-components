@@ -1,0 +1,47 @@
+{{#cc-fieldset as |fs|}}
+  <div class="compound-component
+              {{if fs.states.focus 'compound-component--active'}}
+              {{if (and hasValue (not fs.states.focus)) 'compound-component--show-value'}}">
+    <div class="compound-component--label" {{action "focusIn"}}>
+      Full Name
+    </div>
+    <div class="compound-component--fields">
+      <div class="compound-component--field compound-component--field--first-name">
+        {{#fs.field as |f|}}
+          {{#f.label}}
+            First Name
+          {{/f.label}}
+          {{f.input value=firstName}}
+        {{/fs.field}}
+      </div>
+
+      <div class="compound-component--field compound-component--field--middle-name">
+        {{#fs.field as |f|}}
+          {{#f.label}}
+            MI
+          {{/f.label}}
+          {{f.input value=middleName}}
+        {{/fs.field}}
+      </div>
+
+      <div class="compound-component--field compound-component--field--last-name">
+        {{#fs.field as |f|}}
+          {{#f.label}}
+            Last Name
+          {{/f.label}}
+          {{f.input value=lastName}}
+        {{/fs.field}}
+      </div>
+    </div>
+    <div class="compound-component--value"  {{action "focusIn"}}>
+      {{#fs.field as |f|}}
+        {{#f.label}}
+          Full Name
+        {{/f.label}}
+        {{f.input
+          value=(concat firstName (if middleName " ") middleName " " lastName)
+          disabled=true}}
+      {{/fs.field}}
+    </div>
+  </div>
+{{/cc-fieldset}}

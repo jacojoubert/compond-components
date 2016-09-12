@@ -1,0 +1,141 @@
+$border-color: #dce7f0;
+
+.compound-component {
+  position: relative;
+  border: solid 1px $border-color;
+  margin: 2px 0;
+  border-radius: 3px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+
+  &--label {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: color 0.2s;
+    font-size: 1em;
+    font-weight: bold;
+    color: #abbac5;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 10px;
+
+    &:hover {
+      color: #0887e9;
+    }
+  }
+
+  &--fields {
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -1px;
+  }
+
+  &--value {
+    position: absolute;
+    top: 0em;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+    box-sizing: border-box;
+    padding-left: 10px;
+  }
+
+  &--tooltip {
+    position: absolute;
+    top: 0px;
+    right: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &--target {
+      background: #ffdf91;
+      border-radius: 1.5em;
+      display: block;
+      width: 1.5em;
+      height: 1.5em;
+      line-height: 1.5em;
+      text-align: center;
+      color: #8f6b15;
+    }
+  }
+
+  &--active {
+    .compound-component--fields {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .compound-component--label {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  &--show-value {
+    .compound-component--label {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .compound-component--value {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &--field {
+    flex: 1;
+    padding-left: 10px;
+    margin-right: -1px;
+    border-right: solid 1px $border-color;
+
+    &--first-name {
+      flex: 3;
+    }
+
+    &--middle-name {
+    }
+
+    &--last-name {
+      flex: 3;
+    }
+
+    &--street {
+      flex: 4;
+      min-width: 300px;
+      border-bottom: solid 1px $border-color;
+    }
+
+    &--suite {
+      flex: 2;
+      min-width: 130px;
+      border-bottom: solid 1px $border-color;
+    }
+
+    &--zip-code {
+      flex: 2;
+      min-width: 130px;
+      border-bottom: solid 1px $border-color;
+    }
+
+    &--city {
+      flex: 4;
+      min-width: 150px;
+      border-bottom: solid 1px $border-color;
+    }
+
+    &--state {
+      flex: 4;
+      min-width: 150px;
+      border-bottom: solid 1px $border-color;
+    }
+  }
+}

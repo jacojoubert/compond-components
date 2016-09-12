@@ -1,0 +1,6 @@
+<div class="cc-fieldset">
+  {{yield (hash field=(component "cc-field" onFocusIn=(action "onFocusIn")
+                                            onFocusOut=(action "onFocusOut"))
+                states=states)
+  }}
+</div>

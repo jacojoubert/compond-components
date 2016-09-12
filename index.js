@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'complex-components'
+  name: 'compound-components'
 };

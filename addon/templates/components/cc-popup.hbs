@@ -1,0 +1,15 @@
+{{#if showPopup}}
+  <div class="cc-popup--overlay" {{action hide}}></div>
+
+  {{#component "ember-tether" target=(concat '#' targetId)
+                              targetAttachment=targetAttachment
+                              attachment=attachment
+                              constraints=constraints
+                              class="cc-popup"}}
+    <div class="cc-popup--window">
+      <div class="cc-popup--window--wrapper">
+        {{yield}}
+      </div>
+    </div>
+  {{/component}}
+{{/if}}

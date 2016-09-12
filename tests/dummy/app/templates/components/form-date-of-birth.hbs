@@ -1,0 +1,17 @@
+{{#cc-fieldset as |fs|}}
+  <div class="compound-component {{if (or wasFocused fs.states.focus) 'compound-component--active'}}">
+    <div class="compound-component--label" {{action "focusIn"}}>
+      Date of Birth
+    </div>
+    <div class="compound-component--fields">
+      <div class="compound-component--field">
+        {{#fs.field as |f|}}
+          {{#f.label}}
+            Date of Birth
+          {{/f.label}}
+          {{f.input value=date}}
+        {{/fs.field}}
+      </div>
+    </div>
+  </div>
+{{/cc-fieldset}}
