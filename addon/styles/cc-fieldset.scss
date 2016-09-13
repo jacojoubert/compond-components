@@ -1,7 +1,3 @@
 @mixin cc-fieldset () {
   display: flex;
 }
-
-.cc-fieldset {
-  @include cc-fieldset;
-}
