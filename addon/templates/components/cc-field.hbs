@@ -6,14 +6,16 @@
       size=size
     )
     input=(component input
-      ids=ids
+      ids=(hash input=generatedInputId
+                label=generatedLabelId)
       size=size
       onFocusIn=(action "onFocusIn")
       onFocusOut=(action "onFocusOut")
     )
     label=(component "cc-field--label"
       kind=kind
-      ids=ids
+      ids=(hash input=generatedInputId
+                label=generatedLabelId)
       size=size
     )
   )}}
