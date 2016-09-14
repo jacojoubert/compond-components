@@ -29,6 +29,10 @@ $font-color: #303030;
   @include cc-tooltip;
 }
 
+.cc-tooltip--target {
+  @include cc-tooltip--target;
+}
+
 .cc-error-message {
   @include cc-error-message;
 }

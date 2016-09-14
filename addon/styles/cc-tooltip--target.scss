@@ -1,0 +1,10 @@
+@mixin cc-tooltip--target() {
+  background: #ffdf91;
+  border-radius: 1.5em;
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  color: #8f6b15;
+}
