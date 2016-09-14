@@ -1,7 +1,8 @@
 {{#if showPopup}}
   <div class="cc-popup--overlay" {{action hide}}></div>
 
-  {{#component "ember-tether" target=(concat '#' targetId)
+  {{#component "ember-tether" classPrefix="cc-popup-"
+                              target=(concat '#' targetId)
                               targetAttachment=targetAttachment
                               attachment=attachment
                               constraints=constraints

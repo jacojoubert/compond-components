@@ -49,6 +49,7 @@
     left: 0px;
     width: 100vw;
     height: 100vw;
+    z-index: 1;
 
     // Makes clickable in iOS
     cursor: pointer;
@@ -60,8 +61,8 @@
   }
 
   &--element-attached-left {
-    .ui-popup--tooltip--window {
-      animation: ui-popup--tooltip--show-left 0.3s 1;
+    .cc-popup--window {
+      animation: cc-popup--tooltip--show-left 0.3s 1;
 
       &:before {
         border-right-color: $border-color;
@@ -80,8 +81,8 @@
   }
 
   &--element-attached-right {
-    .ui-popup--tooltip--window {
-      animation: ui-popup--tooltip--show-right 0.3s 1;
+    .cc-popup--window {
+      animation: cc-popup--tooltip--show-right 0.3s 1;
 
       &:before {
         border-left-color: $border-color;
@@ -100,8 +101,8 @@
   }
 
   &--element-attached-top {
-    .ui-popup--tooltip--window {
-      animation: ui-popup--tooltip--show-top 0.3s 1;
+    .cc-popup--window {
+      animation: cc-popup--tooltip--show-top 0.3s 1;
 
       &:before {
         border-bottom-color: $border-color;
@@ -120,8 +121,8 @@
   }
 
   &--element-attached-bottom {
-    .ui-popup--tooltip--window {
-      animation: ui-popup--tooltip--show-bottom 0.3s 1;
+    .cc-popup--window {
+      animation: cc-popup--tooltip--show-bottom 0.3s 1;
 
       &:before {
         border-top-color: $border-color;
@@ -139,7 +140,7 @@
     }
   }
 
-  @keyframes ui-popup--tooltip--show-top {
+  @keyframes cc-popup--tooltip--show-top {
     from {
       transform: translateY(-10px);
       opacity: 0;
@@ -150,7 +151,7 @@
     }
   }
 
-  @keyframes ui-popup--tooltip--show-bottom {
+  @keyframes cc-popup--tooltip--show-bottom {
     from {
       transform: translateY(10px);
       opacity: 0;
@@ -161,7 +162,7 @@
     }
   }
 
-  @keyframes ui-popup--tooltip--show-left {
+  @keyframes cc-popup--tooltip--show-left {
     from {
       transform: translateX(-10px);
       opacity: 0;
@@ -172,7 +173,7 @@
     }
   }
 
-  @keyframes ui-popup--tooltip--show-right {
+  @keyframes cc-popup--tooltip--show-right {
     from {
       transform: translateX(10px);
       opacity: 0;
