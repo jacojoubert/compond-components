@@ -11,5 +11,13 @@ export default FormComponent.extend({
                     new FieldKit.ExpiryDateFormatter());
     field.setFocusedPlaceholder('__-__');
     field.setUnfocusedPlaceholder('__-__');
-  }
+  },
+
+  value: undefined,
+
+  error: Ember.computed('value', function() {
+    if (!this.get('value')) {
+      return "You must enter an date of birth."
+    }
+  })
 });

@@ -1,5 +1,7 @@
 {{#cc-fieldset as |fs|}}
-  <div class="compound-component {{if (or wasFocused fs.states.focus) 'compound-component--active'}}">
+  <div class="compound-component
+              {{if (or isFocused errorState value) 'compound-component--active'}}
+              {{if errorState 'compound-component--error'}}">
     <div class="compound-component__label" {{action "focusIn"}}>
       Total Annual Income
     </div>
@@ -9,10 +11,16 @@
           {{#f.label}}
             Total Annual Income
           {{/f.label}}
-          {{f.input value=income}}
+          {{f.input
+            value=value
+            onFocusIn=(action "onFocusIn")
+            onFocusOut=(action "onFocusOut")}}
         {{/fs.field}}
       </div>
     </div>
+
+    {{cc-error-message error=errorState.message}}
+
     {{#cc-tooltip class="compound-component__tooltip"}}
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia ipsum quis risus finibus, in luctus arcu molestie. Suspendisse tincidunt urna odio, id iaculis nisi cursus gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac <a href="#">turpis egestas</a>.
     {{/cc-tooltip}}

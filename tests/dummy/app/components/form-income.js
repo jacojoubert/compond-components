@@ -4,7 +4,7 @@ import layout from '../templates/components/form-income';
 
 export default FormComponent.extend({
   layout,
-  
+
   didInsertElement() {
     const field = new FieldKit.TextField(this.$().find('input')[0],
                     new FieldKit.NumberFormatter()
@@ -15,5 +15,13 @@ export default FormComponent.extend({
                       .setMaximumFractionDigits(0));
     field.setFocusedPlaceholder('$');
     field.setUnfocusedPlaceholder('$');
-  }
+  },
+
+  value: undefined,
+
+  error: Ember.computed('value', function() {
+    if (!this.get('value')) {
+      return "You must enter an income."
+    }
+  })
 });

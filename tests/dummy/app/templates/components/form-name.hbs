@@ -1,7 +1,8 @@
 {{#cc-fieldset as |fs|}}
   <div class="compound-component
-              {{if fs.states.focus 'compound-component--active'}}
-              {{if (and hasValue (not fs.states.focus)) 'compound-component--show-value'}}">
+              {{if (or isFocused errorState) 'compound-component--active'}}
+              {{if errorState 'compound-component--error'}}
+              {{if (and hasValue (not isFocused) (not errorState)) 'compound-component--show-value'}}">
     <div class="compound-component__label" {{action "focusIn"}}>
       Full Name
     </div>
@@ -11,7 +12,10 @@
           {{#f.label}}
             First Name
           {{/f.label}}
-          {{f.input value=firstName}}
+          {{f.input
+            value=firstName
+            onFocusIn=(action "onFocusIn")
+            onFocusOut=(action "onFocusOut")}}
         {{/fs.field}}
       </div>
 
@@ -20,7 +24,10 @@
           {{#f.label}}
             MI
           {{/f.label}}
-          {{f.input value=middleName}}
+          {{f.input
+            value=middleName
+            onFocusIn=(action "onFocusIn")
+            onFocusOut=(action "onFocusOut")}}
         {{/fs.field}}
       </div>
 
@@ -29,7 +36,10 @@
           {{#f.label}}
             Last Name
           {{/f.label}}
-          {{f.input value=lastName}}
+          {{f.input
+            value=lastName
+            onFocusIn=(action "onFocusIn")
+            onFocusOut=(action "onFocusOut")}}
         {{/fs.field}}
       </div>
     </div>
@@ -43,5 +53,7 @@
           disabled=true}}
       {{/fs.field}}
     </div>
+
+    {{cc-error-message error=errorState.message}}
   </div>
 {{/cc-fieldset}}

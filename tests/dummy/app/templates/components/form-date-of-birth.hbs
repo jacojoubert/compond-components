@@ -1,5 +1,7 @@
 {{#cc-fieldset as |fs|}}
-  <div class="compound-component {{if (or wasFocused fs.states.focus) 'compound-component--active'}}">
+  <div class="compound-component
+              {{if (or isFocused errorState value) 'compound-component--active'}}
+              {{if errorState 'compound-component--error'}}">
     <div class="compound-component__label" {{action "focusIn"}}>
       Date of Birth
     </div>
@@ -9,9 +11,14 @@
           {{#f.label}}
             Date of Birth
           {{/f.label}}
-          {{f.input value=date}}
+          {{f.input
+            value=value
+            onFocusIn=(action "onFocusIn")
+            onFocusOut=(action "onFocusOut")}}
         {{/fs.field}}
       </div>
     </div>
+
+    {{cc-error-message error=errorState.message}}
   </div>
 {{/cc-fieldset}}

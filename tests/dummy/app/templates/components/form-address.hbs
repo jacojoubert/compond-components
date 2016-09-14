@@ -1,7 +1,8 @@
 {{#cc-fieldset as |fs|}}
   <div class="compound-component
-              {{if fs.states.focus 'compound-component--active'}}
-              {{if (and hasValue (not fs.states.focus)) 'compound-component--show-value'}}">
+              {{if (or isFocused errorState) 'compound-component--active'}}
+              {{if errorState 'compound-component--error'}}
+              {{if (and hasValue (not isFocused) (not errorState)) 'compound-component--show-value'}}">
     <div class="compound-component__label" {{action "focusIn"}}>
       Home Address
     </div>
@@ -11,7 +12,10 @@
           {{#f.label}}
             Home Address
           {{/f.label}}
-          {{f.input type="email" value=street}}
+          {{f.input
+            value=street
+            onFocusIn=(action "onFocusIn")
+            onFocusOut=(action "onFocusOut")}}
         {{/fs.field}}
       </div>
 
@@ -20,7 +24,10 @@
           {{#f.label}}
             Apt Site (Optional)
           {{/f.label}}
-          {{f.input type="email" value=suite}}
+          {{f.input
+            value=suite
+            onFocusIn=(action "onFocusIn")
+            onFocusOut=(action "onFocusOut")}}
         {{/fs.field}}
       </div>
 
@@ -29,7 +36,10 @@
           {{#f.label}}
             Zip Code
           {{/f.label}}
-          {{f.input type="email" value=zip}}
+          {{f.input
+            value=zip
+            onFocusIn=(action "onFocusIn")
+            onFocusOut=(action "onFocusOut")}}
         {{/fs.field}}
       </div>
 
@@ -38,7 +48,10 @@
           {{#f.label}}
             City
           {{/f.label}}
-          {{f.input type="email" value=city}}
+          {{f.input
+            value=city
+            onFocusIn=(action "onFocusIn")
+            onFocusOut=(action "onFocusOut")}}
         {{/fs.field}}
       </div>
 
@@ -47,7 +60,10 @@
           {{#f.label}}
             State
           {{/f.label}}
-          {{f.input type="email" value=state}}
+          {{f.input
+            value=state
+            onFocusIn=(action "onFocusIn")
+            onFocusOut=(action "onFocusOut")}}
         {{/fs.field}}
       </div>
     </div>
@@ -60,6 +76,9 @@
         {{city}} {{state}} {{zip}}
       {{/fs.field}}
     </div>
+
+    {{cc-error-message error=errorState.message}}
+
     {{#cc-tooltip class="compound-component__tooltip"}}
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent lacinia ipsum quis risus finibus, in luctus arcu molestie. Suspendisse tincidunt urna odio, id iaculis nisi cursus gravida. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac <a href="#">turpis egestas</a>.
     {{/cc-tooltip}}
