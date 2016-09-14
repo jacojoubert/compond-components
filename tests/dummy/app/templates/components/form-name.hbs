@@ -2,11 +2,11 @@
   <div class="compound-component
               {{if fs.states.focus 'compound-component--active'}}
               {{if (and hasValue (not fs.states.focus)) 'compound-component--show-value'}}">
-    <div class="compound-component--label" {{action "focusIn"}}>
+    <div class="compound-component__label" {{action "focusIn"}}>
       Full Name
     </div>
-    <div class="compound-component--fields">
-      <div class="compound-component--field compound-component--field--first-name">
+    <div class="compound-component__fields">
+      <div class="compound-component__field compound-component__field--first-name">
         {{#fs.field as |f|}}
           {{#f.label}}
             First Name
@@ -15,7 +15,7 @@
         {{/fs.field}}
       </div>
 
-      <div class="compound-component--field compound-component--field--middle-name">
+      <div class="compound-component__field compound-component__field--middle-name">
         {{#fs.field as |f|}}
           {{#f.label}}
             MI
@@ -24,7 +24,7 @@
         {{/fs.field}}
       </div>
 
-      <div class="compound-component--field compound-component--field--last-name">
+      <div class="compound-component__field compound-component__field--last-name">
         {{#fs.field as |f|}}
           {{#f.label}}
             Last Name
@@ -33,7 +33,7 @@
         {{/fs.field}}
       </div>
     </div>
-    <div class="compound-component--value"  {{action "focusIn"}}>
+    <div class="compound-component__value"  {{action "focusIn"}}>
       {{#fs.field as |f|}}
         {{#f.label}}
           Full Name

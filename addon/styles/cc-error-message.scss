@@ -1,0 +1,11 @@
+@mixin cc-error-message (
+  $font-family: $font-family,
+  $color: #a32222,
+  $background: #f8f2f2
+) {
+  font-family: $font-family;
+  color: $color;
+  background: $background;
+  padding: 10px;
+  font-size: 0.8em;
+}

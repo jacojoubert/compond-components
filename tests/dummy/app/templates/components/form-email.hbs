@@ -1,22 +1,31 @@
 {{#cc-fieldset as |fs|}}
-  <div class="compound-component {{if (or wasFocused fs.states.focus) 'compound-component--active'}}">
-    <div class="compound-component--label" {{action "focusIn"}}>
+  <div class="compound-component
+              {{if (or isFocused errorState value) 'compound-component--active'}}
+              {{if errorState 'compound-component--error'}}">
+    <div class="compound-component__label" {{action "focusIn"}}>
       Email Address
     </div>
-    <div class="compound-component--fields">
-      <div class="compound-component--field">
+    <div class="compound-component__fields">
+      <div class="compound-component__field">
         {{#fs.field as |f|}}
           {{#f.label}}
             Email Address
           {{/f.label}}
-          {{f.input type="email" value=email}}
+          {{f.input
+            type="email"
+            value=value
+            onFocusIn=(action "onFocusIn")
+            onFocusOut=(action "onFocusOut")}}
         {{/fs.field}}
       </div>
     </div>
-    <div class="compound-component--tooltip">
+
+    {{cc-error-message error=errorState.message}}
+
+    <div class="compound-component__tooltip">
       {{#cc-tooltip as |tooltip|}}
         {{#tooltip.target}}
-          <div class="compound-component--tooltip--target">
+          <div class="compound-component__tooltip__target">
             ?
           </div>
         {{/tooltip.target}}

@@ -28,3 +28,7 @@ $font-color: #303030;
 .cc-tooltip {
   @include cc-tooltip;
 }
+
+.cc-error-message {
+  @include cc-error-message;
+}

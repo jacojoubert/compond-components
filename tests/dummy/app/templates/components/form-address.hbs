@@ -2,11 +2,11 @@
   <div class="compound-component
               {{if fs.states.focus 'compound-component--active'}}
               {{if (and hasValue (not fs.states.focus)) 'compound-component--show-value'}}">
-    <div class="compound-component--label" {{action "focusIn"}}>
+    <div class="compound-component__label" {{action "focusIn"}}>
       Home Address
     </div>
-    <div class="compound-component--fields">
-      <div class="compound-component--field compound-component--field--street">
+    <div class="compound-component__fields">
+      <div class="compound-component__field compound-component__field--street">
         {{#fs.field as |f|}}
           {{#f.label}}
             Home Address
@@ -15,7 +15,7 @@
         {{/fs.field}}
       </div>
 
-      <div class="compound-component--field compound-component--field--suite">
+      <div class="compound-component__field compound-component__field--suite">
         {{#fs.field as |f|}}
           {{#f.label}}
             Apt Site (Optional)
@@ -24,7 +24,7 @@
         {{/fs.field}}
       </div>
 
-      <div class="compound-component--field compound-component--field--zip-code">
+      <div class="compound-component__field compound-component__field--zip-code">
         {{#fs.field as |f|}}
           {{#f.label}}
             Zip Code
@@ -33,7 +33,7 @@
         {{/fs.field}}
       </div>
 
-      <div class="compound-component--field compound-component--field--city">
+      <div class="compound-component__field compound-component__field--city">
         {{#fs.field as |f|}}
           {{#f.label}}
             City
@@ -42,7 +42,7 @@
         {{/fs.field}}
       </div>
 
-      <div class="compound-component--field compound-component--field--state">
+      <div class="compound-component__field compound-component__field--state">
         {{#fs.field as |f|}}
           {{#f.label}}
             State
@@ -51,7 +51,7 @@
         {{/fs.field}}
       </div>
     </div>
-    <div class="compound-component--value"  {{action "focusIn"}}>
+    <div class="compound-component__value"  {{action "focusIn"}}>
       {{#fs.field as |f|}}
         {{#f.label}}
           Home Address
@@ -60,10 +60,10 @@
         {{city}} {{state}} {{zip}}
       {{/fs.field}}
     </div>
-    <div class="compound-component--tooltip">
+    <div class="compound-component__tooltip">
       {{#cc-tooltip as |tooltip|}}
         {{#tooltip.target}}
-          <div class="compound-component--tooltip--target">
+          <div class="compound-component__tooltip__target">
             ?
           </div>
         {{/tooltip.target}}
