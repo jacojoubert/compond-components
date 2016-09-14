@@ -1,4 +1,4 @@
-<span class="cc-tooltip--target"
+<span class="cc-tooltip__target {{if tooltip.showTooltip 'cc-tooltip__target--active'}}"
       id={{tooltip.targetId}}
       {{action tooltip.action.toggle}}>
   {{yield}}

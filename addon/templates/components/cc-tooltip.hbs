@@ -1,17 +1,17 @@
 <div class="cc-tooltip {{class}}">
   {{#cc-tooltip--target tooltip=(hash targetId=targetId
-                                     action=(hash show=(action "show")
-                                                  hide=(action "hide")
-                                                  toggle=(action "toggle"))
-                                     showTooltip=showTooltip)}}
+                                      action=(hash show=(action "show")
+                                                   hide=(action "hide")
+                                                   toggle=(action "toggle"))
+                                      showTooltip=showTooltip)}}
       ?
   {{/cc-tooltip--target}}
   {{#cc-popup targetId=targetId
-                         showPopup=showTooltip
-                         show=(action "show")
-                         hide=(action "hide")
-                        attachment='middle left'
-                        targetAttachment='middle right'}}
+                       showPopup=showTooltip
+                       show=(action "show")
+                       hide=(action "hide")
+                       attachment='middle left'
+                       targetAttachment='middle right'}}
     {{yield}}
   {{/cc-popup}}
 </div>

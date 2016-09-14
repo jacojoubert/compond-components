@@ -1,0 +1,20 @@
+@mixin cc-tooltip--target() {
+  border-radius: 3px;
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  background: #edf3f7;
+  color: #a5b5bf;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  cursor: pointer;
+  transform: scale(0.9);
+
+  &--active,
+  &:hover {
+    background: #ffecbd;
+    color: #bca672;
+    transform: scale(1);
+  }
+}
