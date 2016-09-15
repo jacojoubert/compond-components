@@ -11,11 +11,12 @@ export default Ember.Component.extend({
   _wasFocused: false,
   _previousErrorState: undefined,
 
-  errorState: Ember.computed('error', 'value', '_wasFocused', '_forceShowError', '_forceHideError', function() {
+  errorState: Ember.computed('error', 'value', '_wasFocused', 'isFocused', '_forceShowError', '_forceHideError', function() {
     if (this.get('_forceHideError')) {
       return false;
     }
 
+    const isFocused = this.get('isFocused');
     const wasFocused = this.get('_wasFocused');
     const error = this.get('error');
     const forceShowError = this.get('_forceShowError');
@@ -34,21 +35,31 @@ export default Ember.Component.extend({
     return false;
   }),
 
+  focusIn() {
+    this.setProperties({
+      '_wasFocused': false,
+      'isFocused': true
+    });
+  },
+
+  focusOut(event) {
+    // The delay ensures that when the user move to next input that input has received
+    // focus before we handle the focusOut event.
+    Ember.run.later(this, () => {
+
+      // Only consider the component unfocused if the current activeElement isn't a child
+      // of the component.
+      if (!this.$().find(document.activeElement).length) {
+        this.setProperties({
+          '_wasFocused': true,
+          'isFocused': false
+        });
+      }
+
+    }, 10);
+  },
+
   actions: {
-    onFocusIn() {
-      this.setProperties({
-        '_wasFocused': false,
-        'isFocused': true
-      });
-    },
-
-    onFocusOut() {
-      this.setProperties({
-        '_wasFocused': true,
-        'isFocused': false
-      });
-    },
-
     focusIn() {
       this.$().find('input:first').focus();
     }
