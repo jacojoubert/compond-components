@@ -1,4 +1,5 @@
 import FieldKit from "npm:field-kit";
+import DateOfBirthFormatter from "../utilities/date-of-birth-formatter";
 import FormComponent from './form-component';
 import layout from '../templates/components/form-date-of-birth';
 
@@ -6,11 +7,10 @@ export default FormComponent.extend({
   layout,
 
   didInsertElement() {
-    // TODO Create custom date formatter
     const field = new FieldKit.TextField(this.$().find('input')[0],
-                    new FieldKit.ExpiryDateFormatter());
-    field.setFocusedPlaceholder('__-__');
-    field.setUnfocusedPlaceholder('__-__');
+                    new DateOfBirthFormatter());
+    field.setFocusedPlaceholder('YYYY-MM-DD');
+    field.setUnfocusedPlaceholder('YYYY-MM-DD');
   },
 
   value: undefined,
