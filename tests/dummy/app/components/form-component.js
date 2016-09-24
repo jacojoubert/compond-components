@@ -42,7 +42,7 @@ export default Ember.Component.extend({
     });
   },
 
-  focusOut(event) {
+  focusOut() {
     // The delay ensures that when the user move to next input that input has received
     // focus before we handle the focusOut event.
     Ember.run.later(this, () => {

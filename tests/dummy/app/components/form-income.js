@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import FieldKit from "npm:field-kit";
 import FormComponent from './form-component';
 import layout from '../templates/components/form-income';
@@ -9,12 +10,12 @@ export default FormComponent.extend({
 
   error: Ember.computed('value', function() {
     if (!this.get('value')) {
-      return "You must enter an income."
+      return "You must enter an income.";
     }
   }),
 
   conditionalValue: Ember.computed('value', 'isFocused', {
-    get(key) {
+    get() {
       if (this.get('isFocused')) {
         return this.get('value');
 

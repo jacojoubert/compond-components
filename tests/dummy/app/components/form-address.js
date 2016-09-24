@@ -15,25 +15,25 @@ export default FormComponent.extend({
 
   isInvalidStreet: Ember.computed('street', function() {
     if (!this.get('street')) {
-      return "You must enter a street."
+      return "You must enter a street.";
     }
   }),
 
   isInvalidZip: Ember.computed('zip', function() {
     if (!this.get('zip')) {
-      return "You must enter a zip code."
+      return "You must enter a zip code.";
     }
   }),
 
   isInvalidCity: Ember.computed('city', function() {
     if (!this.get('city')) {
-      return "You must enter a city."
+      return "You must enter a city.";
     }
   }),
 
   isInvalidState: Ember.computed('state', function() {
     if (!this.get('state')) {
-      return "You must enter a state."
+      return "You must enter a state.";
     }
   }),
 

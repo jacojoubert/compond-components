@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import FieldKit from "npm:field-kit";
 import DateOfBirthFormatter from "../utilities/date-of-birth-formatter";
 import FormComponent from './form-component';
@@ -17,7 +18,7 @@ export default FormComponent.extend({
 
   error: Ember.computed('value', function() {
     if (!this.get('value')) {
-      return "You must enter an date of birth."
+      return "You must enter an date of birth.";
     }
   })
 });

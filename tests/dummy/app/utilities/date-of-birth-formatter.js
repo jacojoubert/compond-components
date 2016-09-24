@@ -87,7 +87,7 @@ class DateOfBirthFormatter extends FieldKit.DelimitedTextFormatter {
 
       // Auto-complete month 4| -> 04
       const month = newText.split(this.delimiter)[1];
-      if (month && month.length == 1 && month > 1) {
+      if (month && month.length === 1 && month > 1) {
         newText = newText.slice(0, newText.length - 1) + '0' + newText.slice(-1);
       }
 

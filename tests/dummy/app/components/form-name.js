@@ -13,13 +13,13 @@ export default FormComponent.extend({
 
   isInvalidFirstName: Ember.computed('firstName', function() {
     if (!this.get('firstName')) {
-      return "You must enter a first name."
+      return "You must enter a first name.";
     }
   }),
 
   isInvalidLastName: Ember.computed('lastName', function() {
     if (!this.get('lastName')) {
-      return "You must enter a last name."
+      return "You must enter a last name.";
     }
   }),
 
