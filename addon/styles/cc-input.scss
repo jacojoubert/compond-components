@@ -1,15 +1,15 @@
 @mixin cc-input (
-  $border-radius: 0px,
-  $color: $font-color,
-  $border-color: transparent,
-  $background: transparent,
-  $disabled-color: #000,
-  $disabled-background: #000,
-  $error-color: none,
-  $focus-color: none,
-  $font-family: $font-family,
-  $padding-x: 0,
-  $padding-y: 0
+  $border-radius,
+  $color,
+  $border-color,
+  $background,
+  $disabled-color,
+  $disabled-background,
+  $error-color,
+  $focus-color,
+  $font-family,
+  $padding-x,
+  $padding-y
 ) {
   border-radius: $border-radius;
   font-family: $font-family;

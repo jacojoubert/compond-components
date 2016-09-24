@@ -1,4 +1,6 @@
 @import 'addon/styles/compound-components';
+@include compound-components();
+
 
 @import 'layout';
 

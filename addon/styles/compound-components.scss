@@ -1,11 +1,84 @@
 @import 'cc-field';
 @import 'cc-field__label';
 @import 'cc-field__description';
-@import 'cc-fieldset';
 @import 'cc-popup';
 @import 'cc-tooltip';
 @import 'cc-tooltip__target';
 @import 'cc-input';
 @import 'cc-error-message';
 
-@import 'config';
+@mixin compound-components (
+  $font-family: inherit,
+  $font-color: #303030
+) {
+  .cc-field {
+    @include cc-field(
+      $margin: 0.5em 0
+    );
+  }
+
+    .cc-field__label {
+      @include cc-field__label(
+        $color: $font-color,
+        $font-family: $font-family,
+        $margin: 0.3em 0
+      );
+    }
+
+    .cc-field__description {
+      @include cc-field__description(
+        $color: $font-color,
+        $opacity: 0.6,
+        $font-family: $font-family,
+        $font-size: 0.9em,
+        $margin: 0.3em 0 0.6em 0
+      );
+    }
+
+  .cc-input {
+    @include cc-input(
+      $border-radius: 0px,
+      $color: $font-color,
+      $border-color: transparent,
+      $background: transparent,
+      $disabled-color: #000,
+      $disabled-background: #000,
+      $error-color: none,
+      $focus-color: none,
+      $font-family: $font-family,
+      $padding-x: 0,
+      $padding-y: 0
+    );
+  }
+
+  .cc-popup {
+    @include cc-popup(
+      $radius: 3px,
+      $border-color: #e3cca5,
+      $border-width: 1px,
+      $color: #433d32,
+      $background: #fff2da,
+      $padding: 0.5em,
+      $box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15),
+      $font-family: $font-family
+    );
+  }
+
+  .cc-tooltip {
+    @include cc-tooltip(
+      $font-family: $font-family
+    );
+  }
+
+    .cc-tooltip__target {
+      @include cc-tooltip__target();
+    }
+
+  .cc-error-message {
+    @include cc-error-message(
+      $font-family: $font-family,
+      $color: #a32222,
+      $background: #f8f2f2
+    );
+  }
+}

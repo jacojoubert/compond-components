@@ -1,12 +1,12 @@
 @mixin cc-popup (
-  $radius: 3px,
-  $border-color: #e3cca5,
-  $border-width: 1px,
-  $color: #433d32,
-  $background: #fff2da,
-  $padding: 0.5em,
-  $box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15),
-  $font-family: $font-family
+  $radius,
+  $border-color,
+  $border-width,
+  $color,
+  $background,
+  $padding,
+  $box-shadow,
+  $font-family
 ) {
   &--window {
     border-radius: $radius;
